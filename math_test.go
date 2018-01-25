@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestIsHex(t *testing.T) {
-	var cases = []struct{
+	var cases = []struct {
 		hex string
 		exp bool
 	}{
@@ -23,7 +23,7 @@ func TestIsHex(t *testing.T) {
 }
 
 func TestHexToDec(t *testing.T) {
-	var cases = []struct{
+	var cases = []struct {
 		hex string
 		exp string
 		err bool
@@ -52,7 +52,7 @@ func TestHexToDec(t *testing.T) {
 }
 
 func TestDecToHex(t *testing.T) {
-	var cases = []struct{
+	var cases = []struct {
 		dec string
 		exp string
 		err bool
