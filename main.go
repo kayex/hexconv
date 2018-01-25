@@ -13,6 +13,7 @@ func main() {
 		c, err := Convert(scanner.Text())
 		if err != nil {
 			fmt.Println("invalid format")
+			continue
 		}
 
 		fmt.Println(c)
