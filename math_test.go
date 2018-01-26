@@ -11,6 +11,7 @@ func TestIsHex(t *testing.T) {
 		{"0x1", true},
 		{"123", false},
 		{"x1", false},
+		{"", false},
 	}
 
 	for _, c := range cases {
@@ -32,6 +33,9 @@ func TestHexToDec(t *testing.T) {
 		{"0x00", "0", false},
 		{"0x01", "1", false},
 		{"0x10", "16", false},
+		{"0x", "", true},
+		{"hello", "", true},
+		{"", "", true},
 	}
 
 	for _, c := range cases {
@@ -60,6 +64,8 @@ func TestDecToHex(t *testing.T) {
 		{"0", "0x0", false},
 		{"1", "0x1", false},
 		{"16", "0x10", false},
+		{"hello", "", true},
+		{"", "", true},
 	}
 
 	for _, c := range cases {
