@@ -24,3 +24,12 @@ func main() {
 		os.Exit(1)
 	}
 }
+
+// Convert converts bidirectionally between base 10 and base 16 numbers.
+func Convert(s string) (string, error) {
+	if IsHex(s) {
+		return HexToDec(s)
+	} else {
+		return DecToHex(s)
+	}
+}

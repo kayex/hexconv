@@ -6,15 +6,6 @@ import (
 	"strings"
 )
 
-// convert converts bidirectionally between base 10 and base 16 numbers.
-func Convert(s string) (string, error) {
-	if IsHex(s) {
-		return HexToDec(s)
-	} else {
-		return DecToHex(s)
-	}
-}
-
 func DecToHex(dec string) (string, error) {
 	v, err := strconv.ParseInt(dec, 10, 64)
 	if err != nil {
