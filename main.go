@@ -7,8 +7,20 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
+	if len(os.Args) == 2 {
+		c, err := Convert(os.Args[1])
+		if err != nil {
+			fmt.Println("invalid format")
+			os.Exit(1)
+		}
 
+		fmt.Println(c)
+		os.Exit(0)
+	}
+
+	fmt.Println("Entering interactive mode.")
+
+	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		c, err := Convert(scanner.Text())
 		if err != nil {
